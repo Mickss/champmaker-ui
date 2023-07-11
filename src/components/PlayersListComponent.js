@@ -19,8 +19,8 @@ const PlayersListComponent = () => {
       <h2>The Players Page</h2>
       <ul>
         {players.map((player) => (
-          <li key={player.name}>
-            <Link to={player.name}>{player.name}</Link>
+          <li key={player.id}>
+            <Link to={String(player.id)}>{player.name}</Link>
           </li>
         ))}
       </ul>
