@@ -19,6 +19,16 @@ const MainNavigation = () => {
           </li>
           <li>
             <NavLink
+              to="/teams"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Teams
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/players"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
