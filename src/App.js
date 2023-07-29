@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from './RootLayout';
 import TeamsListComponent from './components/TeamsListComponent';
 import TeamDetailsComponent from './components/TeamDetailsComponent';
+import ChampionshipDetailsComponent from './components/ChampionshipDetailsComponent';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       element: <RootLayout />,
       children: [
         {path: "/", element: <ChampionshipsListComponent />},
+        {path: '/:champId', element: <ChampionshipDetailsComponent />},
         {path: "players", element: <PlayersListComponent />},
         {path: 'players/:playerId', element: <PlayerDetailsComponent /> },
         {path: "teams", element: <TeamsListComponent />},
