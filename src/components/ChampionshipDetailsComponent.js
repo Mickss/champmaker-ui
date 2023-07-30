@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ChampionshipDetailsComponent = () => {
-  const [championship, setChampionship] = useState({});
+  const [championship, setChampionship] = useState();
   const params = useParams();
   useEffect(() => {
     fetchChampionship(params.champId);
@@ -14,8 +14,22 @@ const ChampionshipDetailsComponent = () => {
       .then((data) => setChampionship(data));
   };
 
-  return (
-    <h2>{`Champioship details: ${championship.name}, City: ${championship.city}`}</h2>
+  return championship ? (
+    <>
+      <h2>{`Champioship details: ${championship.name}, City: ${championship.city}`}</h2>
+      <h2>Registered teams</h2>
+      <ul>
+        {championship.registeredTeams.map((registeredTeam) => (
+          <li key={registeredTeam.id}>
+            <Link to={"../teams/" + String(registeredTeam.id)}>
+              {registeredTeam.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
+  ) : (
+    <h2>Loading championship...</h2>
   );
 };
 
