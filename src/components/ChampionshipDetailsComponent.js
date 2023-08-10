@@ -21,7 +21,7 @@ const ChampionshipDetailsComponent = () => {
       <ul>
         {championship.registeredTeams.map((registeredTeam) => (
           <li key={registeredTeam.id}>
-            <Link to={"../teams/" + String(registeredTeam.id)}>
+            <Link to={`../championships/${params.champId}/teams/` + String(registeredTeam.id)}>
               {registeredTeam.name}
             </Link>
           </li>
