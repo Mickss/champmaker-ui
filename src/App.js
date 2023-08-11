@@ -19,6 +19,7 @@ function App() {
         { path: "players/:playerId", element: <PlayerDetailsComponent /> },
         { path: "teams", element: <TeamsListComponent /> },
         { path: "teams/:teamId", element: <TeamDetailsComponent /> },
+        { path: "championships/:champId/teams/:teamId", element: <TeamDetailsComponent /> },
       ],
     },
   ]);
