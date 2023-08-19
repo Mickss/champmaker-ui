@@ -14,9 +14,16 @@ const ChampionshipDetailsComponent = () => {
       .then((data) => setChampionship(data));
   };
 
+  const shuffleTeams = () => {
+    fetch(`http://localhost:8080/championships/${params.champId}/shuffle-teams`, {
+      method: "put",
+    });
+  }
+
   return championship ? (
     <>
       <h2>{`Champioship details: ${championship.name}, City: ${championship.city}`}</h2>
+      <button onClick={shuffleTeams}>Shuffle teams</button>
       <h2>Registered teams</h2>
       <ul>
         {championship.registeredTeams.map((registeredTeam) => (
