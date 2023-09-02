@@ -31,6 +31,7 @@ const ChampionshipDetailsComponent = () => {
             <Link to={`../championships/${params.champId}/teams/` + String(registeredTeam.id)}>
               {registeredTeam.name}
             </Link>
+            <span> Group:   {registeredTeam.champGroup} </span>
           </li>
         ))}
       </ul>
