@@ -9,7 +9,7 @@ const TeamListComponent = () => {
   }, []);
 
   const fetchTeams = () => {
-    fetch("http://localhost:8080/teams")
+    fetch("http://localhost:25001/teams")
       .then((response) => response.json())
       .then((data) => setTeams(data));
   };

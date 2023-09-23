@@ -9,7 +9,7 @@ const PlayerDetailsComponent = () => {
   }, []);
 
   const fetchPlayer = (playerId) => {
-    fetch(`http://localhost:8080/players/${playerId}`)
+    fetch(`http://localhost:25001/players/${playerId}`)
       .then((response) => response.json())
       .then((data) => setPlayer(data));
   };

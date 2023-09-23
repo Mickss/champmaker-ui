@@ -13,7 +13,7 @@ const ChampionshipsListComponent = () => {
   }, []);
 
   const fetchChampionships = () => {
-    fetch("http://localhost:8080/championships")
+    fetch("http://localhost:25001/championships")
       .then((response) => response.json())
       .then((data) => setChampionships(data));
   };
@@ -24,7 +24,7 @@ const ChampionshipsListComponent = () => {
           city: cityInputRef.current.value,
         }
 
-        fetch("http://localhost:8080/championships", {
+        fetch("http://localhost:25001/championships", {
           method: "post",
           headers: {
             "Content-Type": "application/json"

@@ -9,13 +9,13 @@ const ChampionshipDetailsComponent = () => {
   }, []);
 
   const fetchChampionship = (champId) => {
-    fetch(`http://localhost:8080/championships/${champId}`)
+    fetch(`http://localhost:25001/championships/${champId}`)
       .then((response) => response.json())
       .then((data) => setChampionship(data));
   };
 
   const shuffleTeams = () => {
-    fetch(`http://localhost:8080/championships/${params.champId}/shuffle-teams`, {
+    fetch(`http://localhost:25001/championships/${params.champId}/shuffle-teams`, {
       method: "put",
     });
   }
