@@ -15,21 +15,21 @@ const TeamDetailsComponent = () => {
   }, []);
 
   const fetchTeam = (teamId) => {
-    fetch(`http://localhost:8080/teams/${teamId}`)
+    fetch(`http://localhost:25001/teams/${teamId}`)
       .then((response) => response.json())
       .then((data) => setTeam(data));
   };
 
   const fetchRegisteredPlayers = (champId, teamId) => {
     fetch(
-      `http://localhost:8080/championships/${champId}/registered-players?teamId=${teamId}`
+      `http://localhost:25001/championships/${champId}/registered-players?teamId=${teamId}`
     )
       .then((response) => response.json())
       .then((data) => setRegisteredPlayers(data));
   };
 
   const fetchPlayers = (teamId) => {
-    fetch(`http://localhost:8080/players?teamId=${teamId}`)
+    fetch(`http://localhost:25001/players?teamId=${teamId}`)
       .then((response) => response.json())
       .then((data) => setPlayers(data));
   };
