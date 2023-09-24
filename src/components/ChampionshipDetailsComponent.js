@@ -15,9 +15,12 @@ const ChampionshipDetailsComponent = () => {
   };
 
   const shuffleTeams = () => {
-    fetch(`http://localhost:25001/championships/${params.champId}/shuffle-teams`, {
-      method: "put",
-    });
+    fetch(
+      `http://localhost:25001/championships/${params.champId}/shuffle-teams`,
+      {
+        method: "put",
+      }
+    );
   };
 
   const schedule = () => {
@@ -29,17 +32,25 @@ const ChampionshipDetailsComponent = () => {
   return championship ? (
     <>
       <h2>{`Champioship details: ${championship.name}, City: ${championship.city}`}</h2>
-      <button onClick={shuffleTeams}>Shuffle teams</button>
-      <h2></h2>
-      <button onClick={schedule}>Shedule championship</button>
+      <div>
+        <button onClick={shuffleTeams}>Shuffle teams</button>
+      </div>
+      <div>
+        <button onClick={schedule}>Shedule championship</button>
+      </div>
       <h2>Registered teams</h2>
       <ul>
         {championship.registeredTeams.map((registeredTeam) => (
           <li key={registeredTeam.id}>
-            <Link to={`../championships/${params.champId}/teams/` + String(registeredTeam.id)}>
+            <Link
+              to={
+                `../championships/${params.champId}/teams/` +
+                String(registeredTeam.id)
+              }
+            >
               {registeredTeam.name}
             </Link>
-            <span> Group:   {registeredTeam.champGroup} </span>
+            <span> Group: {registeredTeam.champGroup} </span>
           </li>
         ))}
       </ul>
